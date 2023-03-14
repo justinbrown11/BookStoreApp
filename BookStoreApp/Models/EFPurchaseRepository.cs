@@ -17,7 +17,7 @@ namespace BookStoreApp.Models
 
         public void SavePurchase(Purchase purchase)
         {
-            context.AddRange(purchase.Lines.Select(x => x.Book));
+            context.AttachRange(purchase.Lines.Select(x => x.Book));
 
             if (purchase.PurchaseId == 0)
             {
