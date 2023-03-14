@@ -34,6 +34,7 @@ namespace BookStoreApp
 
             // Configure for repository
             services.AddScoped<IBookStoreRepository, EFBookStoreRepository>();
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
 
             // Enable razor pages
             services.AddRazorPages();
@@ -41,6 +42,9 @@ namespace BookStoreApp
             // Enable sessions
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
