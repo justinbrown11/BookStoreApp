@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MySql.EntityFrameworkCore;
 
 namespace BookStoreApp
 {
@@ -29,7 +30,7 @@ namespace BookStoreApp
             // Add DB context to use sqlite connection
             services.AddDbContext<BookstoreContext>(options =>
             {
-                options.UseSqlite(Configuration["ConnectionStrings:BookstoreDbConnection"]);
+                options.UseMySQL(Configuration["ConnectionStrings:BookstoreDbConnection"]);
             });
 
             // Configure for repository

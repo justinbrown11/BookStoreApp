@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 namespace BookStoreApp.Migrations
 {
@@ -10,16 +11,16 @@ namespace BookStoreApp.Migrations
                 name: "Books",
                 columns: table => new
                 {
-                    BookId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: true),
-                    Author = table.Column<string>(type: "TEXT", nullable: true),
-                    Publisher = table.Column<string>(type: "TEXT", nullable: true),
-                    Isbn = table.Column<string>(type: "TEXT", nullable: true),
-                    Classification = table.Column<string>(type: "TEXT", nullable: true),
-                    Category = table.Column<string>(type: "TEXT", nullable: true),
-                    PageCount = table.Column<int>(type: "INTEGER", nullable: false),
-                    Price = table.Column<double>(type: "REAL", nullable: false)
+                    BookId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Title = table.Column<string>(type: "text", nullable: true),
+                    Author = table.Column<string>(type: "text", nullable: true),
+                    Publisher = table.Column<string>(type: "text", nullable: true),
+                    Isbn = table.Column<string>(type: "text", nullable: true),
+                    Classification = table.Column<string>(type: "text", nullable: true),
+                    Category = table.Column<string>(type: "text", nullable: true),
+                    PageCount = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,16 +31,16 @@ namespace BookStoreApp.Migrations
                 name: "Purchases",
                 columns: table => new
                 {
-                    PurchaseId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    AddressLine1 = table.Column<string>(type: "TEXT", nullable: false),
-                    AddressLine2 = table.Column<string>(type: "TEXT", nullable: true),
-                    AddressLine3 = table.Column<string>(type: "TEXT", nullable: true),
-                    City = table.Column<string>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
-                    Zip = table.Column<string>(type: "TEXT", nullable: true),
-                    Country = table.Column<string>(type: "TEXT", nullable: false)
+                    PurchaseId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    AddressLine1 = table.Column<string>(type: "text", nullable: false),
+                    AddressLine2 = table.Column<string>(type: "text", nullable: true),
+                    AddressLine3 = table.Column<string>(type: "text", nullable: true),
+                    City = table.Column<string>(type: "text", nullable: false),
+                    State = table.Column<string>(type: "text", nullable: false),
+                    Zip = table.Column<string>(type: "text", nullable: true),
+                    Country = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,11 +51,11 @@ namespace BookStoreApp.Migrations
                 name: "BasketLineItem",
                 columns: table => new
                 {
-                    LineId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    BookId = table.Column<int>(type: "INTEGER", nullable: true),
-                    Quantity = table.Column<int>(type: "INTEGER", nullable: false),
-                    PurchaseId = table.Column<int>(type: "INTEGER", nullable: true)
+                    LineId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    BookId = table.Column<int>(type: "int", nullable: true),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    PurchaseId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
