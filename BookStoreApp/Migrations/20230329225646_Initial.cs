@@ -74,6 +74,18 @@ namespace BookStoreApp.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "BookId", "Author", "Category", "Classification", "Isbn", "PageCount", "Price", "Publisher", "Title" },
+                values: new object[,]
+                {
+                    { 1, "Victor Hugo", "Classic", "Fiction", "978-0451419439", 1488, 9.9499999999999993, "Signet", "Les Miserables" },
+                    { 2, "Doris Kearns Goodwin", "Biography", "Non-Fiction", "978-0743270755", 944, 14.58, "Simon & Schuster", "Team of Rivals" },
+                    { 3, "Alice Schroeder", "Biography", "Non-Fiction", "978-0553384611", 832, 14.58, "Bantam", "The Snowball" },
+                    { 4, "Ronald C. White", "Biography", "Non-Fiction", "978-0812981254", 864, 21.539999999999999, "Random House", "American Ulysses" },
+                    { 5, "Laura Hillenbrand", "Historical", "Non-Fiction", "978-0812974492", 528, 13.33, "Random House", "Unbroken" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_BasketLineItem_BookId",
                 table: "BasketLineItem",

@@ -74,6 +74,68 @@ namespace BookStoreApp.Migrations
                     b.HasKey("BookId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            BookId = 1,
+                            Author = "Victor Hugo",
+                            Category = "Classic",
+                            Classification = "Fiction",
+                            Isbn = "978-0451419439",
+                            PageCount = 1488,
+                            Price = 9.9499999999999993,
+                            Publisher = "Signet",
+                            Title = "Les Miserables"
+                        },
+                        new
+                        {
+                            BookId = 2,
+                            Author = "Doris Kearns Goodwin",
+                            Category = "Biography",
+                            Classification = "Non-Fiction",
+                            Isbn = "978-0743270755",
+                            PageCount = 944,
+                            Price = 14.58,
+                            Publisher = "Simon & Schuster",
+                            Title = "Team of Rivals"
+                        },
+                        new
+                        {
+                            BookId = 3,
+                            Author = "Alice Schroeder",
+                            Category = "Biography",
+                            Classification = "Non-Fiction",
+                            Isbn = "978-0553384611",
+                            PageCount = 832,
+                            Price = 14.58,
+                            Publisher = "Bantam",
+                            Title = "The Snowball"
+                        },
+                        new
+                        {
+                            BookId = 4,
+                            Author = "Ronald C. White",
+                            Category = "Biography",
+                            Classification = "Non-Fiction",
+                            Isbn = "978-0812981254",
+                            PageCount = 864,
+                            Price = 21.539999999999999,
+                            Publisher = "Random House",
+                            Title = "American Ulysses"
+                        },
+                        new
+                        {
+                            BookId = 5,
+                            Author = "Laura Hillenbrand",
+                            Category = "Historical",
+                            Classification = "Non-Fiction",
+                            Isbn = "978-0812974492",
+                            PageCount = 528,
+                            Price = 13.33,
+                            Publisher = "Random House",
+                            Title = "Unbroken"
+                        });
                 });
 
             modelBuilder.Entity("BookStoreApp.Models.Purchase", b =>
